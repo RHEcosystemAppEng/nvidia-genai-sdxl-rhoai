@@ -214,17 +214,17 @@ A toy-jensen image can now be generated, using the deployed model. To generate a
 ## Python module versions
 Even though the latest version is used for all the modules that are installed for this project, here are the versions that are used underneath (in case any version incompatibility occurs in future):
 
-* accelerate: `1.0.1`
+* accelerate: `1.1.1`
 * boto3: `1.34.111`
 * botocore: `1.34.111`
-* dataclass_wizard: `0.23.0`
-* diffusers: `0.31.0.dev0`
+* dataclass_wizard: `0.26.0`
+* diffusers: `0.32.0.dev0`
 * ipywidgets: `8.1.2`
-* jupyterlab: `3.6.7`
-* huggingface_hub: `0.25.2`
-* minio: `7.2.7`
+* jupyterlab: `3.6.8`
+* huggingface_hub: `0.26.2`
+* minio: `7.2.9`
 * peft: `0.13.2`
-* transformers: `4.45.2`
+* transformers: `4.46.2`
 * torch: `2.2.2+cu121`
 * torchvision: `0.17.2+cu121`
 
