@@ -3,6 +3,13 @@
 !.project/spec.yaml
 !.project/configpacks
 
+# Ignore directories used to generate output images
+models/tuned-toy-jensen
+# temp cloned directory
+repos
+# Temp directory
+TMP
+
 # General ignores
 .DS_Store
 __pycache__/

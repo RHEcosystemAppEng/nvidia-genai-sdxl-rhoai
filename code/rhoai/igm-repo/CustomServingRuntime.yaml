@@ -1,0 +1,31 @@
+apiVersion: serving.kserve.io/v1alpha1
+kind: ServingRuntime
+labels:
+  opendatahub.io/dashboard: "true"
+metadata:
+  name: stable-diffusion-custom
+  annotations:
+    opendatahub.io/recommended-accelerators: '["nvidia.com/gpu"]'
+spec:
+  securityContext:
+    runAsUser: 1000970123
+  supportedModelFormats:
+    - name: pytorch
+      version: "1"
+      autoSelect: true
+  multiModel: false
+  containers:
+    - name: kserve-container
+      image: quay.io/sgahlot/stable-diffusion-igm:0.5
+      securityContext:
+        runAsUser: 1000970123
+      args:
+        - --model_id
+        - stabilityai/stable-diffusion-xl-base-1.0
+      env:
+        - name: model_id
+          value: stabilityai/stable-diffusion-xl-base-1.0
+        - name: model_location
+          value: /mnt/models/fine-tuned
+        - name: model_lora_weights_location
+          value: /mnt/models/lora

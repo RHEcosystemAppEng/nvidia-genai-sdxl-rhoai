@@ -17,6 +17,11 @@ From there, you'll see how you can fine-tune the model using DreamBooth. We'll u
 * NVIDIA driver requirements: Latest driver version
 * Storage requirements: 40GB
 
+
+## Model deployment and serving in RHOAI:
+* Follow [this readme](code/rhoai/README.md) for fine-tuning and deploying the model in **Red Hat OpenShift AI**
+
+
 # Quickstart
 If you have NVIDIA AI Workbench already installed, you can use this Project in AI Workbench on your choice of machine by:
 1. Forking this Project to your own GitHub namespace and copying the link

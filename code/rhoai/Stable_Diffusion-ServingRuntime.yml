@@ -1,0 +1,26 @@
+apiVersion: serving.kserve.io/v1alpha1
+kind: ServingRuntime
+labels:
+  opendatahub.io/dashboard: "true"
+metadata:
+  name: stable-diffusion
+  annotations:
+    opendatahub.io/recommended-accelerators: '["nvidia.com/gpu"]'
+    openshift.io/display-name: Stable Diffusion
+spec:
+  builtInAdapter:
+    modelLoadingTimeoutMillis: 90000
+  supportedModelFormats:
+    - name: sdxl
+      autoSelect: true
+  multiModel: false
+  containers:
+    - name: kserve-container
+      image: quay.io/sgahlot/stable-diffusion:1.0
+      args:
+        - --model_name
+        - nvidia
+        - --model_id
+        - stabilityai/stable-diffusion-xl-base-1.0
+        - --lora_dir
+        - /mnt/models/lora
