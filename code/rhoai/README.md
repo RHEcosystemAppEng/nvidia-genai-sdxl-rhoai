@@ -186,6 +186,8 @@ Once the initial notebook has run successfully and the data connection is create
   * _Model framework_: **sdxl**
   * _Model server size_: **Small**
   * _Accelerator_: **NVIDIA GPU**
+  * _Model route_:
+    * _If you want to access this model endpoint from outside the cluster_, make sure to check the `Make deployed models available through an external route` checkbox. By default the model endpoint is only available as an _internal service_.
   * _Model location_: Select **Existing data connection** option
     * _Name_: **Name of data connection created in previous step**
     * _Path_: **model**
