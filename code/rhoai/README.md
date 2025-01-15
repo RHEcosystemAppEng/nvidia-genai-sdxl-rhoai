@@ -153,18 +153,22 @@ Below is a gif showing fields on `Add serving runtime` page:
 
 
 ### Open workbench
-Now that the workbench is created and running, follow these steps to setup the project:
+Open the newly created workbench by following these steps:
 * Select your newly created project by clicking on `Data Science Projects` in the sidebar menu
 * Click on `Workbenches` tab and open the newly created workbench by clicking on the `Open` link
 * The workbench will open up in a new tab
 * _When the workbench is opened for the first time, you will be shown an `Authorize Access` page._
   * _Click `Allow selected permissions` button in this page._
-* In the workbench, click on `Terminal` icon in the `Launcher` tab.
-* Clone this repository in the `Terminal` by running the following command:  
-  `git clone https://github.com/sgahlot/workbench-example-sdxl-customization.git`
 
 Below is a gif showing `Open workbench` pages:
 ![Open workbench gif](./assets/open_workbench.gif)
+
+
+### Clone repo
+Now that the workbench is created and running, follow these steps to setup the project:
+* In the workbench, click on `Terminal` icon in the `Launcher` tab.
+* Clone this repository in the `Terminal` by running the following command:
+  `git clone https://github.com/RHEcosystemAppEng/nvidia-genai-sdxl-rhoai.git`
 
 
 ### Run Jupyter notebook
@@ -190,7 +194,7 @@ Once the initial notebook has run successfully and the data connection is create
     * _If you want to access this model endpoint from outside the cluster_, make sure to check the `Make deployed models available through an external route` checkbox. By default the model endpoint is only available as an _internal service_.
   * _Model location_: Select **Existing data connection** option
     * _Name_: **Name of data connection created in previous step**
-    * _Path_: **model**
+    * _Path_: **sdxl**
 * Click on `Deploy` to deploy this model
 
 Copy the `inference endpoint` once the model is deployed successfully (_it will take a few minutes to deploy the model_).
@@ -206,7 +210,7 @@ A toy-jensen image can now be generated, using the deployed model. To generate a
 
 
 ## System used
-* Red Hat OpenShift AI: `2.10.0`, `2.13.0`, `2.14.0`
+* Red Hat OpenShift AI: `2.10.0`, `2.13.0`, `2.14.0`, `2.16.0`
 * GPU: 1x NVIDIA `A10G`
 * Storage: 50GB
 
@@ -214,19 +218,21 @@ A toy-jensen image can now be generated, using the deployed model. To generate a
 ## Python module versions
 Even though the latest version is used for all the modules that are installed for this project, here are the versions that are used underneath (in case any version incompatibility occurs in future):
 
-* accelerate: `1.1.1`
-* boto3: `1.34.111`
-* botocore: `1.34.111`
-* dataclass_wizard: `0.26.0`
-* diffusers: `0.32.0.dev0`
-* ipywidgets: `8.1.2`
-* jupyterlab: `3.6.8`
-* huggingface_hub: `0.26.2`
-* minio: `7.2.9`
-* peft: `0.13.2`
-* transformers: `4.46.2`
-* torch: `2.2.2+cu121`
-* torchvision: `0.17.2+cu121`
+| Module            | Version(s)                    |
+| ----------------- | ----------------------------- |
+| accelerate        | `1.1.1`, `1.2.1`              |
+| boto3             | `1.34.111`, `1.35.55`         |
+| botocore          | `1.34.111`, `1.35.55`         |
+| dataclass_wizard  | `0.26.0`, `0.34.0`            |
+| diffusers         | `0.32.0.dev0`, `0.33.0.dev0`  |
+| ipywidgets        | `8.1.2`                       |
+| jupyterlab        | `3.6.8`, `4.2.5`              |
+| huggingface_hub   | `0.26.2`, `0.27.1`            |
+| minio             | `7.2.9`, `7.2.10`             |
+| peft              | `0.13.2`, `0.14.0`            |
+| transformers      | `4.46.2`, `4.48.0`            |
+| torch             | `2.2.2+cu121`, `2.4.1+cu121`  |
+| torchvision       | `0.17.2+cu121`, `0.19.1+cu121`|
 
 
 ## Notebooks with output
